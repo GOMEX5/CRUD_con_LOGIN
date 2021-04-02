@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #005C97;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Spicy Rice', cursive;
+}
+.navTitle{
+    margin-left: 20px;
+}
+
+.cardCss{
+    width: 80%;
+    margin-right: 20%;
+}
+
+.div1{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 100px;
+}
+
+.nav1{
+    padding: 0px 20px;
+}
+
+.cardCss2{
+    width: 80%;
+    margin-left: 20%;
+    margin-top: 100px;
+}
+
+@media screen and (max-width:700px){
+
+    /* .tablaCss{
+        display: flex;
+        overflow-x: scroll;
+    } */
+
+    .cardCss{
+        width: 80%;
+        margin-right: 10%;
+    }
+
+    .cardCss2{
+        width: 60%;
+        margin-left: 20%;
+    }
+}
+@media screen and (max-width:400px){
+
+    .cardCss{
+        width: 80%;
+        margin-right: 10%;
+    }
+
+    .cardCss2{
+        width: 80%;
+        margin-left: 10%;
+    }
+}

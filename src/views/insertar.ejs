@@ -1,0 +1,41 @@
+<%- include('partials/_head') %>
+<% if(login) {%>
+<%- include('partials/_nav') %>
+<div class="container mt-5">
+    <div class="rows">
+        <div class="col-12 col-md-5 offset-md-3">
+            <div class="card animate__animated animate__flipInY cardCss2">
+                <div class="card-header bg-dark text-white text-center">
+                    <h1>Save Customer</h1>
+                </div>
+                <div class="card-body">
+                    <form action="/add" method="POST">
+                        <div class="form-group mt-3">
+                            <input type="text" name="name" placeholder="Name" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" name="address" placeholder="Address" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" name="phone" placeholder="Phone" class="form-control">
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <i class="fas fa-save"></i>Save Customer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% } else{ %>
+<div class="div1">
+    <center>
+        <h1 class="text-white"><strong><%= name %> </strong></h1>
+        <a href="/logoutAUX" class="btn btn-dark text-white">Ir al Login</a>
+    </center>
+</div>
+<% } %>
+<%- include('partials/_footer') %>

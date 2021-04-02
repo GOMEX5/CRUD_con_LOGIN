@@ -1,0 +1,44 @@
+<%- include('partials/_head') %>
+<% if(login) {%>
+<%- include('partials/_nav') %>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-5 offset-md-3">
+            <div class="card animate__animated animate__flipInY cardCss2">
+                <div class="card-header bg-dark text-white text-center">
+                    <h1>Editar</h1>
+                </div>
+                <div class="card-body p-3">
+                    <form action="/update/<%= data.ID %>" method="POST">
+                        <div class="form-group mt-3">
+                            <input type="text" name="name" value="<%= data.name %>" placeholder="Name"
+                                class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" name="address" value="<%= data.address %>" placeholder="Address"
+                                class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" name="phone" value="<%= data.phone %>" placeholder="Phone"
+                                class="form-control">
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary mt-3">
+                                <i class="fas fa-edit"></i>Edit Customer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% } else{ %>
+<div class="div1">
+    <center>
+        <h1 class="text-white"><strong><%= name %> </strong></h1>
+        <a href="/logoutAUX" class="btn btn-dark text-white">Ir al Login</a>
+    </center>
+</div>
+<% } %>
+<%- include('partials/_footer') %>

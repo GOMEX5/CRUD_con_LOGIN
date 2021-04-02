@@ -1,0 +1,45 @@
+<%- include('partials/_head') %> 
+    <% if(login) {%> 
+        <%- include('partials/_nav') %> 
+        <div class="container p-5">
+            <div class="row mt-5">
+                <div class="col-12 table-responsive">
+                    <table class="table table-bordered table-hover animate__bounceIn bg-white">
+                        <thead>
+                            <tr class="bg-dark text-white">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if(data) {%> 
+                                <% for(var i = 0; i < data.length; i++) {%> 
+                                    <tr>
+                                        <td><%= (i+1) %> </td>
+                                        <td><%= data[i].name %> </td>
+                                        <td><%= data[i].address %> </td>
+                                        <td><%= data[i].phone %> </td>
+                                        <td>
+                                            <a href="/delete/<%= data[i].ID %> " class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a>
+                                            <a href="/update/<%= data[i].ID %> " class="btn btn-info"><i class="fas fa-pen"></i> Update</a>
+                                        </td>
+                                    </tr>
+                                <% } %> 
+                            <% } %> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <% } else{ %> 
+        <div class="div1">
+            <center>
+                <h1 class="text-white"><strong><%= name %> </strong></h1>
+                <a href="login" class="btn btn-dark text-white">Ir al Login</a>
+            </center>
+        </div>
+    <% } %> 
+<%- include('partials/_footer') %> 
